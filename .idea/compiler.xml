@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mafia-telegram-bot" />
+        <module name="mafiabot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mafia-telegram-bot" target="1.8" />
+      <module name="mafiabot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
