@@ -11,7 +11,7 @@ public class Main {
 		TelegramBotsApi botsApi = new TelegramBotsApi();
 
 		try {
-			botsApi.registerBot(new CrmCafeBot());
+			botsApi.registerBot(new MafiaTelegramBot());
 			System.out.println("Server started");
 		} catch (TelegramApiException e) {
 			e.printStackTrace();
