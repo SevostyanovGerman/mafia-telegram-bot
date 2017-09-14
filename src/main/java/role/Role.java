@@ -1,6 +1,5 @@
 package role;
 
-import action.Action;
 import player.Player;
 
 public interface Role {
@@ -9,11 +8,9 @@ public interface Role {
 
     String getNightText();
 
-    Action getAction();
-
     String getRoleName();
 
 	String runNight(Player player);
 
-	void runDay(Player player);
+    default String runDay(Player player) { return ""; }
 }

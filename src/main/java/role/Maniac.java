@@ -1,11 +1,9 @@
 package role;
 
-import action.Action;
-import action.ManiacAction;
+
+import player.Player;
 
 public class Maniac implements Role {
-
-	private static final ManiacAction maniacAction = new ManiacAction();
 
 	@Override
 	public String getNightText() {
@@ -13,12 +11,14 @@ public class Maniac implements Role {
 	}
 
 	@Override
-	public Action getAction() {
-		return maniacAction;
-	}
-
-	@Override
 	public String getRoleName() {
 		return "Маньяк";
 	}
+
+	@Override
+	public String runNight(Player player) {
+		player.setAlive(false);
+		return getRoleName() + " может уснуть";
+	}
+
 }

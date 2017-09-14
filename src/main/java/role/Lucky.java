@@ -1,23 +1,15 @@
 package role;
 
-import action.Action;
-import action.LuckyAction;
 import player.Player;
 
 public class Lucky implements Role {
 
 	private boolean isFirstNightKill = true;
 	private boolean isFirstDayKill = true;
-	private static final LuckyAction luckyAction = new LuckyAction();
 
 	@Override
 	public String getNightText() {
 		return "";
-	}
-
-	@Override
-	public Action getAction() {
-		return luckyAction;
 	}
 
 	@Override
@@ -35,10 +27,11 @@ public class Lucky implements Role {
 	}
 
 	@Override
-	public void runDay(Player player) {
+	public String runDay(Player player) {
 		if (isFirstDayKill) {
 			player.setAlive(true);
 		}
 		isFirstDayKill = false;
+		return "";
 	}
 }

@@ -1,6 +1,6 @@
 package role.mafia;
 
-import action.Action;
+import player.Player;
 import role.Role;
 
 @Mafia
@@ -12,8 +12,14 @@ public class Lawyer implements Role {
     }
 
     @Override
-    public Action getAction() {
-        return null;
+    public String getRoleName() {
+        return "Адвокат";
+    }
+
+    @Override
+    public String runNight(Player player) {
+        player.setHasLawyerProtection(true);
+        return getRoleName() + " может уснуть";
     }
 
 }

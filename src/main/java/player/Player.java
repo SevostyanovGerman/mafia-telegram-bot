@@ -1,17 +1,12 @@
 package player;
 
-import action.Action;
 import role.Role;
-
-import java.util.*;
 
 public class Player {
 
     private String name;
 
     private Role role;
-
-    private Map<Action, Player> tonightActions = new HashMap<>();
 
 	private boolean isAlive;
 
@@ -25,29 +20,12 @@ public class Player {
         isAlive = true;
     }
 
-    public void executeActions() {
-    	Map<Action, Player> actionsMap = getTonightActions();
-    	Set<Action> actions = actionsMap.keySet();
-		//TODO сортировка действий по Order'у
-		for (Action action : actions) {
-			action.runNight(this);
-		}
-	}
-
 	public boolean isLoved() {
 		return isLoved;
 	}
 
 	public void setLoved(boolean loved) {
 		isLoved = loved;
-	}
-
-	public Map<Action, Player> getTonightActions() {
-		return tonightActions;
-	}
-
-	public void setTonightActions(Map<Action, Player> tonightActions) {
-		this.tonightActions = tonightActions;
 	}
 
 	public boolean isHasLawyerProtection() {
