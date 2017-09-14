@@ -4,5 +4,6 @@ import player.Player;
 
 public interface Action {
 
-    void run(Player player);
+    String runNight(Player player);
+    default String runDay(Player player) { return ""; }
 }

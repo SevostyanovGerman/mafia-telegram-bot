@@ -7,11 +7,6 @@ import role.Role;
 public class Lawyer implements Role {
 
     @Override
-    public String getMorningText() {
-        return "";
-    }
-
-    @Override
     public String getNightText() {
         return "Кому ночью дает протекцию адвокат?";
     }

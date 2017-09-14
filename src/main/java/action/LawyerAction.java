@@ -5,7 +5,7 @@ import player.Player;
 public class LawyerAction implements Action {
 
     @Override
-    public void run(Player player) {
-
+    public String runNight(Player player) {
+        player.setHasLawyerProtection(true);
     }
 }

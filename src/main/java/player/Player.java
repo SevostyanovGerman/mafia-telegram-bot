@@ -1,23 +1,64 @@
 package player;
 
+import action.Action;
 import role.Role;
+
+import java.util.*;
 
 public class Player {
 
     private String name;
 
-    private boolean isAlive;
-
     private Role role;
 
+    private Map<Action, Player> tonightActions = new HashMap<>();
 
-    public Player(String name, Role role) {
+	private boolean isAlive;
+
+	private boolean hasLawyerProtection;
+
+	private boolean isLoved;
+
+	public Player(String name, Role role) {
         this.name = name;
         this.role = role;
         isAlive = true;
     }
 
-    public void setName(String name) {
+    public void executeActions() {
+    	Map<Action, Player> actionsMap = getTonightActions();
+    	Set<Action> actions = actionsMap.keySet();
+		//TODO сортировка действий по Order'у
+		for (Action action : actions) {
+			action.runNight(this);
+		}
+	}
+
+	public boolean isLoved() {
+		return isLoved;
+	}
+
+	public void setLoved(boolean loved) {
+		isLoved = loved;
+	}
+
+	public Map<Action, Player> getTonightActions() {
+		return tonightActions;
+	}
+
+	public void setTonightActions(Map<Action, Player> tonightActions) {
+		this.tonightActions = tonightActions;
+	}
+
+	public boolean isHasLawyerProtection() {
+		return hasLawyerProtection;
+	}
+
+	public void setHasLawyerProtection(boolean hasLawyerProtection) {
+		this.hasLawyerProtection = hasLawyerProtection;
+	}
+
+	public void setName(String name) {
         this.name = name;
     }
 
